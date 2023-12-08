@@ -7,6 +7,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 import store from "./stateManager/store.jsx";
 import BackEndDataCatalog from "./BackEndCatalogs/BackEndDataCatalog.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 let persistor = persistStore(store);
 
