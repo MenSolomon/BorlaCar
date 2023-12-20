@@ -12,6 +12,8 @@ import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
+import { Link } from 'react-router-dom';
+
 
 function Navbar() {
     const my_pages = [ ];
@@ -60,9 +62,18 @@ function Navbar() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open my_settings">
                 <IconButton onClick={handleOpenSettingsMenu} sx={{ p: 0 }}>
-               
+           
                 </IconButton>
               </Tooltip>
+           <Link to={"/SignIn"} style={{ textDecoration: 'none' }}>
+           <Button sx={{
+                background:"#fff",
+                borderRadius:"10px",
+                color:"#000",
+                width:"100%"
+                
+              }}  >Sigin in</Button>
+           </Link>
               <Menu
                 sx={{ mt: '55px' }}
                 id="menu-appbar"

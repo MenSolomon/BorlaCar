@@ -1,67 +1,27 @@
-import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { Icon } from 'leaflet';
-import './maps.css'
+import { useState } from "react";
+import "../Maps/maps.css";
+import { MapContainer, TileLayer, useMap, useMapEvents } from "react-leaflet";
 import 'leaflet/dist/leaflet.css';
+import LocationMarker from "./LocationMarker";
 
-const MapComponent = () => {
+function Maps() {
 
-    // Berlin coordinates
-    const position = [5.6037,1870]
 
-    // --- (6) Create a custom marker ---
-    const customIcon = new Icon({
-      iconUrl: '/icons8-select-24.png',
-      iconSize: [20, 20],
-      // iconAnchor: [1, 1],
-      // popupAnchor: [-0, -76]
-    })
-
-  
   return (
-    <section className='map-component' >
-    {/* --- (5) Add leaflet map container --- */}
-    <div className='map'>
-    <MapContainer center={position} zoom={6} scrollWheelZoom={true}>
-    <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        // --- (7) Alternative map style (attribution and url copied from the leaflet extras website) ---
-        // attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
-        // url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
-        // --- -------------------------------------------------------------------------------------- ---
-      />
-      <Marker position={position}
-        icon={customIcon}
-      >
-        <Popup>
-          🐻🍻🎉
-        </Popup>
-      </Marker>
-    </MapContainer>
-    {/* --- ---------------------------- --- */}
+    <div className="map">
+      <MapContainer center={[5.616133, -0.102372]} zoom={6} scrollWheelZoom={true}    style={{ height: '100vh', width: '100wh' }}>
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+   {/* <LocationMarker/> */}
+      </MapContainer>
     </div>
-  </section>
   );
-};
-
-export default MapComponent;
+}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default Maps;
 
