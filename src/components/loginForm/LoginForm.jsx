@@ -3,8 +3,10 @@ import "../loginForm/loginForm.css"
 import {Form,InputGroup} from 'react-bootstrap'
 import ghanaImage from "../../assets/ghana.png"
 import BasicButton from '../ButtonBasic/BasicButton'
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+// import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import LoginModal from "../../Modal/LoginModal"
+
 
 const loginForm = () => {
 
@@ -35,11 +37,11 @@ const loginForm = () => {
           className='Num-input'
         />
       </InputGroup>
-      <Form.Label style={{color:"#fff"}} >Location</Form.Label>
+      <Form.Label style={{color:"#fff"}} >PassWord</Form.Label>
       <InputGroup className="mb-3">
  
         <InputGroup.Text id="basic-addon2"  className='Num-input'>
-        Location 
+        Password
         </InputGroup.Text>
         <Form.Control
           aria-label="Default"
@@ -55,7 +57,9 @@ const loginForm = () => {
    variant="contained" onClick={handleOpen}
 
    >
-    <MdOutlineKeyboardArrowRight className='' style={{fontSize:"60px"}} />
+   <KeyboardArrowRightIcon style={{ color: '#ffff', fontSize:"60px" }} />
+
+    {/* <MdOutlineKeyboardArrowRight className='' style={{fontSize:"60px"}} /> */}
    </BasicButton>
         {/* Rendering the modal */}
     <LoginModal open={open} handleClose={handleClose}/> 
