@@ -58,6 +58,7 @@ const LoginForm = () => {
     <div>
       <Form className="mt-5" onSubmit={handleSubmit}>
         <Form.Label style={{ color: "#fff" }}>Phone Number</Form.Label>
+
         <InputGroup className="mb-3">
           <InputGroup.Text id="basic-addon2" className="Num-input w-25">
             <img
@@ -69,6 +70,7 @@ const LoginForm = () => {
           </InputGroup.Text>
           <Form.Control
             aria-label="Default"
+
             type="number"
             aria-describedby="inputGroup-sizing-default"
             className="Num-input"
@@ -98,9 +100,11 @@ const LoginForm = () => {
         >
           Login
         </Button>
+
       </Form>
     </div>
   );
 };
 
 export default LoginForm;
+
