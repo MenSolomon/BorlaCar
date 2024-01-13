@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import StoreIcon from '@mui/icons-material/Store';
@@ -11,9 +11,17 @@ import Tooltip from '@mui/material/Tooltip';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+// import { GiHamburgerMenu } from "react-icons/gi";
+import { Link, useLocation } from 'react-router-dom';
+import BasicMenu from '../Menu/BasicMenu';
+
+
 
 
 function Navbar() {
+ const MenuArray=["History","Support","Promo","Logout"]
+
+  const location = useLocation();
     const my_pages = [ ];
     const my_settings = ['Profile', 'Account','Logout'];
 
@@ -58,12 +66,27 @@ function Navbar() {
               ))}
             </Box>
             <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open my_settings">
+              {/* <Tooltip title="Open my_settings">
                 <IconButton onClick={handleOpenSettingsMenu} sx={{ p: 0 }}>
-               
                 </IconButton>
-              </Tooltip>
-              <Menu
+              </Tooltip> */}
+ 
+           {
+            location.pathname=== '/SignIn'?
+          <BasicMenu menuItemsArray={MenuArray} /> :      <Link to={"/SignIn"} style={{ textDecoration: 'none' }}>
+           <Button sx={{
+                background:"#fff",
+                borderRadius:"10px",
+                color:"#000", 
+                width:"100%"
+                
+              }}  >Sigin in</Button>
+             
+           </Link>
+
+           }
+
+              {/* <Menu
                 sx={{ mt: '55px' }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
@@ -79,7 +102,7 @@ function Navbar() {
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
-              </Menu>
+              </Menu> */}
             </Box>
         </Toolbar>
       </AppBar>

@@ -19,8 +19,6 @@ import { useEffect, useState } from "react";
 const Login = () => {
 
 
-  
-
   return (
     <div>
       <div
@@ -32,15 +30,20 @@ const Login = () => {
       >
         <div className="container">
           <div className="row">
-            <div className="col-lg-4">
-              <LoginForm />
+
+            <div className="col-lg-4 mt-5">
+            <LoginForm/>
+
             </div>
             <div className="col-lg-8">
               <div className="cards-maps">
               <Maps/> 
               </div>
             </div>
-          </div>
+
+      
+         </div>
+
         </div>
 
         {/* <Container>
