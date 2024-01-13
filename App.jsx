@@ -4,6 +4,7 @@ import Home from "./src/screens/Home";
 import Navbar from "./src/components/Navbar/Navbar";
 import SignIn from "./src/screens/SignIn";
 import { useEffect } from "react";
+import ProtectedRoutes from "./src/Utilities/ProtectedRoutes";
 
 const App = () => {
 
@@ -12,9 +13,16 @@ const App = () => {
    <div>
      <Navbar/>
      <Routes>
-      <Route element={<Login />} path="/" />
+     <Route element={<Login />} path="/" />
+     <Route element={<SignIn />} path="/SignIn" />
+
+
+      <Route element={<ProtectedRoutes />}>
       <Route element={<Home />} path="/home" />
-      <Route element={<SignIn />} path="/SignIn" />
+
+
+      
+      </Route>
     </Routes>
    </div>
   );

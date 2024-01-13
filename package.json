@@ -42,6 +42,7 @@
     "react-redux": "^8.1.1",
     "react-router-dom": "^6.14.1",
     "redux-persist": "^6.0.0",
+    "sweetalert2": "^11.10.2",
     "tools": "^0.0.0",
     "uuid": "^9.0.1"
   },

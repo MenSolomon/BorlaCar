@@ -3,19 +3,20 @@ import { createSlice } from "@reduxjs/toolkit";
 export const OtherComponentStatesSlice = createSlice({
   name: "OtherComponentStates",
   initialState: {
-    autoCompletePlayerPosition: "",
+    loginStatus: false
   },
 
   reducers: {
-    setAutoCompletePlayerPosition: (state, action) => {
-      state.autoCompletePlayerPosition = action.payload;
-    },
+    
+    setLoginStatus:(state,action)=>{
+      state.loginStatus=action.payload
+    }
   },
 });
 
-export const selectAutoCompletePlayerPosition = (state) =>
-  state.OtherComponentStates.autoCompletePlayerPosition;
+  export const selectLoginStatus= (state) =>
+  state.OtherComponentStates.loginStatus;
 
-export const { setAutoCompletePlayerPosition } =
+export const { setLoginStatus } =
   OtherComponentStatesSlice.actions;
 export default OtherComponentStatesSlice.reducer;
