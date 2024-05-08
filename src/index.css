@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -11,8 +15,9 @@
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 }
-.login-Box{
+.login-Box {
   background-color: #222 !important;
   width: 100% !important;
   height: 100% !important;

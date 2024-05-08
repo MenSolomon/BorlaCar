@@ -2,7 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
-import OtherComponentStatesReducer from "./slices/OtherComponentStatesSlice";
+import LoginStatusReducer from "./slices/LoginStatusSlice";
+import RequestDriverReducer from "./slices/RequestDriverSlice";
 
 const persistConfig = {
   key: "root",
@@ -12,7 +13,9 @@ const persistConfig = {
 };
 
 const reducer = combineReducers({
-  OtherComponentStates: OtherComponentStatesReducer,
+  // OtherComponentStates: OtherComponentStatesReducer,
+  LoginInfo: LoginStatusReducer,
+  RequestedDriverData: RequestDriverReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);
